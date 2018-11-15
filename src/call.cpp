@@ -2005,7 +2005,7 @@ char* call::createSendingMessage(SendingMessage *src, int P_index, char *msg_buf
             break;
         case E_Message_Local_Port:
             int port;
-            if((multisocket) && (sendMode != MODE_SERVER)) {
+            if( ( (multisocket) && (sendMode != MODE_SERVER) ) || force_call_port ) {
                 port = call_port;
             } else {
                 port =  local_port;

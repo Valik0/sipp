@@ -152,6 +152,7 @@ struct sipp_option options_table[] = {
     },
     {"i", "Set the local IP address for 'Contact:','Via:', and 'From:' headers. Default is primary host IP address.\n", SIPP_OPTION_IP, local_ip, 1},
     {"p", "Set the local port number.  Default is a random free port chosen by the system.", SIPP_OPTION_INT, &user_port, 1},
+    {"fsp", "Force to use socket src port (call_port) as local port number.  Default is not.", SIPP_OPTION_SETFLAG, &force_call_port, 1},
     {"bind_local", "Bind socket to local IP address, i.e. the local IP address is used as the source IP address.  If SIPp runs in server mode it will only listen on the local IP address instead of all IP addresses.", SIPP_OPTION_SETFLAG, &bind_local, 1},
     {"ci", "Set the local control IP address", SIPP_OPTION_IP, control_ip, 1},
     {"cp", "Set the local control port number. Default is 8888.", SIPP_OPTION_INT, &control_port, 1},

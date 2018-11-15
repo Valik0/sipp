@@ -200,6 +200,7 @@ extern unsigned long      default_behaviors       _DEFVAL(DEFAULT_BEHAVIOR_ALL);
 extern unsigned long      deadcall_wait           _DEFVAL(DEFAULT_DEADCALL_WAIT);
 extern bool               pause_msg_ign           _DEFVAL(0);
 extern bool               auto_answer             _DEFVAL(false);
+extern bool               force_call_port         _DEFVAL(false);
 extern int                multisocket             _DEFVAL(0);
 extern int                compression             _DEFVAL(0);
 extern int                peripsocket             _DEFVAL(0);
