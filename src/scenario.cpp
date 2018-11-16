@@ -947,7 +947,7 @@ scenario::scenario(char * filename, int deflt)
                 curmsg->M_type = MSG_TYPE_NOP;
             } else if(!strcmp(elem, "recvCmd")) {
                 curmsg->M_type = MSG_TYPE_RECVCMD;
-                curmsg->optional = xp_get_optional("optional", "recv");
+                curmsg->optional = xp_get_optional("optional", "recvCmd");
                 last_recv_optional = curmsg->optional;
 
                 /* 3pcc extended mode */
