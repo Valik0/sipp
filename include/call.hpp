@@ -24,6 +24,7 @@
 
 #include <map>
 #include <list>
+#include <atomic>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <string.h>
@@ -162,6 +163,7 @@ protected:
     unsigned int   cseq;
 
 #ifdef PCAPPLAY
+    static std::atomic_int nextAutoMediaPort;
     int hasMediaInformation;
     pthread_t media_thread_a;
     pthread_t media_thread_i;

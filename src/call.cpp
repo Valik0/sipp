@@ -99,6 +99,7 @@ std::string trim(const std::string &s) {
 extern  map<string, SIPpSocket *>     map_perip_fd;
 
 #ifdef PCAPPLAY
+std::atomic_int call::nextAutoMediaPort(0);
 /* send_packets pthread wrapper */
 void *send_wrapper(void *);
 #endif
@@ -2043,7 +2044,11 @@ char* call::createSendingMessage(SendingMessage *src, int P_index, char *msg_buf
         case E_Message_Auto_Media_Port: {
             int port = media_port + comp->offset;
             if (comp->type == E_Message_Auto_Media_Port) {
+#ifdef PCAPPLAY
+                port = media_port + (4 * (nextAutoMediaPort++)) % 10000 + comp->offset;
+#else
                 port = media_port + (4 * (number - 1)) % 10000 + comp->offset;
+#endif
             }
 #ifdef PCAPPLAY
             char *begin = dest;
